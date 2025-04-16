@@ -1,0 +1,8 @@
+go 1.22
+
+use (
+    ./packages/providers
+    ./packages/compositions
+    ./packages/claims
+    ./controllers/k6-operator
+)
