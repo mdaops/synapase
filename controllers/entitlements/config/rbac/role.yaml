@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - inventory.synapse.platform.io
+  resources:
+  - entitlements
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - inventory.synapse.platform.io
+  resources:
+  - entitlements/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - inventory.synapse.platform.io
+  resources:
+  - entitlements/status
+  verbs:
+  - get
+  - patch
+  - update

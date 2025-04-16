@@ -1,0 +1,9 @@
+apiVersion: inventory.synapse.platform.io/v1
+kind: Entitlement
+metadata:
+  labels:
+    app.kubernetes.io/name: entitlements
+    app.kubernetes.io/managed-by: kustomize
+  name: entitlement-sample
+spec:
+  # TODO(user): Add fields here

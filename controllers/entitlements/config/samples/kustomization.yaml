@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- inventory_v1_entitlement.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
