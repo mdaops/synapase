@@ -1,8 +1,6 @@
-version: "3.8"
-# Pinned to latest semantic versions as of 2025-04-17
 services:
   redis:
-    image: redis:7.2.12
+    image: redis:7.4.2
     ports:
       - "6379:6379"
 
@@ -24,29 +22,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  loki:
-    image: grafana/loki:2.10.0
-    ports:
-      - "3100:3100"
-
-  tempo:
-    image: grafana/tempo:1.10.0
-    ports:
-      - "3200:3200"
-
-  mimir:
-    image: grafana/mimir:2.10.0
-    ports:
-      - "9095:9095"
-
-  grafana:
-    image: grafana/grafana:11.1.2
+  lgtm:
+    image: grafana/otel-lgtm:0.11.0
     ports:
       - "3000:3000"
-    depends_on:
-      - loki
-      - tempo
-      - mimir
+      - "4317:4317"
+      - "4318:4318"
 
 volumes:
   mongodb_data:
