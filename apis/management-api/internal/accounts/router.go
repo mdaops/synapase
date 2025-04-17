@@ -33,7 +33,7 @@ func (r *router) Accounts(ctx context.Context, input *struct{}) (*AccountsRespon
 	return resp, nil
 }
 
-func (r *router) Account(ctx context.Context, input GetAccountInput) (*AccountResponse, error) {
+func (r *router) Account(ctx context.Context, input *GetAccountInput) (*AccountResponse, error) {
 	resp := &AccountResponse{}
 	resp.Body.Message = "Hello, world!"
 	return resp, nil
@@ -56,7 +56,7 @@ func (r *router) Router() {
 		Summary:     "Get account",
 		Description: "Get account by id.",
 		Tags:        []string{"Accounts"},
-	}, r.Accounts)
+	}, r.Account)
 }
 
 func NewRouter(api huma.API) *router {
